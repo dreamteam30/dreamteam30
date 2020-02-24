@@ -2,25 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_agency/MultiCityMode.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/MapStore.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/Ticket.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_customer/CustomerCreateJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/Customer.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/Seat.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_airliner/AirlineViewJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_agency/TravelManageJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_customer/CustomerViewJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_agency/ReserveJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/Flight.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_airliner/AirlineManageJpanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_customer/CustomerInformationJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_airliner/AirlinerCreateJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_agency/AirlinerInfoJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_customer/CustomerManageJPanel.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Business/Airliners.java</file>
-            <file>file:/Users/junyaoli/Desktop/文件/Assignment4%20-JunyaoLi/src/Interface_agency/SelectAirlinerJPanel.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  *
  * @author junyaoli
  */
-public class AirlineViewJPanel extends javax.swing.JPanel {
+public class AirlineUpdateJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewJPanel
@@ -26,21 +26,12 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
     private MapStore mapstore;
     private Airliners airliners;
     
-    public AirlineViewJPanel(JPanel rightpanel, Airliners airliners) {
+    public AirlineUpdateJPanel(JPanel rightpanel, Airliners airliners) {
         initComponents();
         this.rightpanel=rightpanel;
 //        this.mapstore=mapstore;
         this.airliners=airliners;
         init(airliners);
-        
-         ALTextField.setEditable(false);
-         ATTextField.setEditable(false);
-         DLTextField.setEditable(false);
-         DTTextField.setEditable(false);
-         FNTextField.setEditable(false);
-         IDTextField.setEditable(false);
-         SeatTextField.setEditable(false);
-        
     }
 
     /**
@@ -52,6 +43,7 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Updatebtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         FNTextField = new javax.swing.JTextField();
@@ -68,6 +60,13 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
         IDTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         SeatTextField = new javax.swing.JTextField();
+
+        Updatebtn.setText("Update");
+        Updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdatebtnActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText(" Current Airliners");
 
@@ -104,6 +103,9 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
                         .addGap(136, 136, 136)
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 312, Short.MAX_VALUE)
+                        .addComponent(Updatebtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +169,9 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(SeatTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(Updatebtn)
+                .addGap(25, 25, 25))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -177,6 +181,28 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
         rightpanel.remove(this);
         layout.previous(rightpanel);
     }//GEN-LAST:event_BackbtnActionPerformed
+
+    private void UpdatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdatebtnActionPerformed
+        // TODO add your handling code here:
+        
+        int ID = Integer.parseInt(IDTextField.getText());
+        String FN=FNTextField.getText();
+        String DC=DLTextField.getText();
+        String DT=DTTextField.getText();
+        String AC=ALTextField.getText();
+        String AT=ATTextField.getText();
+        int seat = Integer.parseInt(SeatTextField.getText());
+        
+        Airliners airliner = new Airliners(ID,FN, DC, AC, DT, AT,seat);
+        
+        Map<Integer, Airliners> airlinermap= MapStore.getInstance().getAirlinerMap();       
+        
+        if(airlinermap.containsKey(ID)){
+        
+            airlinermap.put(ID, airliner);
+        }
+        JOptionPane.showMessageDialog(null, "Update successfully");
+    }//GEN-LAST:event_UpdatebtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -188,6 +214,7 @@ public class AirlineViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField FNTextField;
     private javax.swing.JTextField IDTextField;
     private javax.swing.JTextField SeatTextField;
+    private javax.swing.JButton Updatebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

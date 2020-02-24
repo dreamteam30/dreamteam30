@@ -5,6 +5,7 @@
  */
 package Interface_agency;
 
+import Business.Airliners;
 import Business.Customer;
 import Business.MapStore;
 import Business.Ticket;
@@ -25,22 +26,36 @@ public class MultiCityMode extends javax.swing.JPanel {
     private JPanel XJpanel;
     private MapStore mapstore;
     private int count=0;
-    private  int key=0;
+    private int key=0;
+    private int FNcount=1;
+    private Airliners airliners;
     
     public MultiCityMode(JPanel XJpanel, MapStore mapstore) {
         
-        
+//        this.airliners=airliners;
         this.XJpanel =XJpanel;
         this.mapstore=mapstore;
         initComponents();
         seat2TextField.setVisible(false);
         flight2TextField.setVisible(false);
+        
+        
         seat3TextField.setVisible(false);
         flight3TextField.setVisible(false);
+        
+        
         jLabel5.setVisible(false);
         jLabel3.setVisible(false);
         jLabel7.setVisible(false);
         jLabel6.setVisible(false);
+        
+//        flight1TextField.setEditable(false);
+//        flight3TextField.setEditable(false);
+//        flight2TextField.setEditable(false);
+//        
+        
+        
+        
     }
 
     /**
@@ -126,7 +141,7 @@ public class MultiCityMode extends javax.swing.JPanel {
                             .addComponent(flight3TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(seat3TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 171, Short.MAX_VALUE)
+                        .addGap(0, 158, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
@@ -139,7 +154,7 @@ public class MultiCityMode extends javax.swing.JPanel {
                             .addComponent(flight1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(seat1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(210, 210, 210))
+                .addGap(223, 223, 223))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(reservejButton)
@@ -240,6 +255,7 @@ public class MultiCityMode extends javax.swing.JPanel {
         if (count>0) {
             seat2TextField.setVisible(true);
             flight2TextField.setVisible(true);
+           
             jLabel5.setVisible(true);
             jLabel3.setVisible(true);
         
@@ -248,6 +264,7 @@ public class MultiCityMode extends javax.swing.JPanel {
             
             seat3TextField.setVisible(true);
             flight3TextField.setVisible(true);
+           
             jLabel7.setVisible(true);
             jLabel6.setVisible(true);
         }

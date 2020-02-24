@@ -42,7 +42,8 @@ public class ReserveJPanel extends javax.swing.JPanel {
         this.XJpanel = XJpanel;
         this.mapstore= mapstore;
         this.airliners = airliners;
-//        
+        flightTextField1.setText(airliners.getAirlinerNumber());
+        flightTextField1.setEditable(false);
 //        System.out.println(i.get(0));
     }
     
@@ -58,10 +59,10 @@ public class ReserveJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        flightTextField = new javax.swing.JTextField();
-        reservejButton = new javax.swing.JButton();
         flightTextField1 = new javax.swing.JTextField();
+        reservejButton = new javax.swing.JButton();
         flightTextField2 = new javax.swing.JTextField();
+        flightTextField = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 2, 15)); // NOI18N
         jLabel1.setText("Flight Number :");
@@ -84,8 +85,8 @@ public class ReserveJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(165, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel1)
@@ -94,29 +95,29 @@ public class ReserveJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(reservejButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(flightTextField)
                         .addComponent(flightTextField1)
-                        .addComponent(flightTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(122, 122, 122))
+                        .addComponent(flightTextField2)
+                        .addComponent(flightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(flightTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(flightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(flightTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(flightTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(reservejButton)
-                .addGap(67, 67, 67))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -129,8 +130,8 @@ public class ReserveJPanel extends javax.swing.JPanel {
             String seatnumber;
         
             cID = Integer.parseInt(flightTextField.getText());
-            flightnumber= flightTextField.getText(); 
-            seatnumber= flightTextField.getText();
+            flightnumber= flightTextField1.getText(); 
+            seatnumber= flightTextField2.getText();
          
             Ticket T = new Ticket(TID, cID, flightnumber, seatnumber);
             Map<Integer, Ticket> ticketmap= MapStore.getInstance().getTicketmap();       

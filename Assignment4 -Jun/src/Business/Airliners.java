@@ -29,6 +29,7 @@ public class Airliners {
     private String ArrivalTime;
     private int seat;
     private int ticketcount=0;
+    private boolean[] seatTable;
     
     public Airliners(int ID, String Number, String DeparturalCity,
                     String ArrivalCity,String DeparturalTime,String ArrivalTime, int seat){
@@ -43,6 +44,8 @@ public class Airliners {
         ///
         this.airlinerID = ID;
         this.updatetime = new Date();
+        
+        seatTable= new boolean [seat];
     }
 
     public int getTicketcount() {
