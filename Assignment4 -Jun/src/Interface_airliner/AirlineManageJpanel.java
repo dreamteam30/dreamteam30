@@ -60,6 +60,7 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
         Searchbtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         SearchTextfield = new javax.swing.JTextField();
+        Updatebtn = new javax.swing.JButton();
 
         AirlinerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -107,6 +108,13 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
 
         jLabel2.setText("Flight Number:");
 
+        Updatebtn.setText("Update");
+        Updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdatebtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,19 +127,22 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
                                 .addComponent(SearchTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Searchbtn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Viewbtn)
-                                .addGap(78, 78, 78)
-                                .addComponent(Createbtn)
-                                .addGap(54, 54, 54)
-                                .addComponent(Deletebtn)))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Viewbtn)
+                                    .addGap(37, 37, 37)
+                                    .addComponent(Createbtn)
+                                    .addGap(83, 83, 83)
+                                    .addComponent(Updatebtn)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Deletebtn))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -145,7 +156,8 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Viewbtn)
                     .addComponent(Createbtn)
-                    .addComponent(Deletebtn))
+                    .addComponent(Deletebtn)
+                    .addComponent(Updatebtn))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Searchbtn)
@@ -203,9 +215,9 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
                 Airliners value = entry.getValue();
                 if (value.getAirlinerNumber().equals(AirlinerTable.getValueAt(getrow, 0))) {
                     AirlineViewJPanel panel = new AirlineViewJPanel(rightpanel, value);
-          this.rightpanel.add(panel);
-          CardLayout layout = (CardLayout) rightpanel.getLayout();
-          layout.next(rightpanel);
+                    this.rightpanel.add(panel);
+                    CardLayout layout = (CardLayout) rightpanel.getLayout();
+                    layout.next(rightpanel);
                 }
             }
             
@@ -241,6 +253,28 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
         populate();
     }//GEN-LAST:event_DeletebtnActionPerformed
 
+    private void UpdatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdatebtnActionPerformed
+        // TODO add your handling code here:
+        
+         int getrow = AirlinerTable.getSelectedRow();
+        if(getrow>=0){
+            for (Map.Entry<Integer, Airliners> entry : mapstore.getInstance().getAirlinerMap().entrySet()) {
+                
+                
+                Airliners value = entry.getValue();
+                if (value.getAirlinerNumber().equals(AirlinerTable.getValueAt(getrow, 0))) {
+                    AirlineUpdateJPanel panel = new AirlineUpdateJPanel(rightpanel, value);
+          this.rightpanel.add(panel);
+          CardLayout layout = (CardLayout) rightpanel.getLayout();
+          layout.next(rightpanel);
+                }
+            }
+            
+          
+        }else
+            JOptionPane.showMessageDialog(null, "Please select a row!");
+    }//GEN-LAST:event_UpdatebtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AirlinerTable;
@@ -248,6 +282,7 @@ public class AirlineManageJpanel extends javax.swing.JPanel {
     private javax.swing.JButton Deletebtn;
     private javax.swing.JTextField SearchTextfield;
     private javax.swing.JButton Searchbtn;
+    private javax.swing.JButton Updatebtn;
     private javax.swing.JButton Viewbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -160,9 +160,9 @@ public class AirlinerInfoJPanel extends javax.swing.JPanel {
                 Airliners value = entry.getValue();
                 if (value.getAirlinerNumber().equals(airlinerInfojTable.getValueAt(getrow, 0))) {
                     AirlineViewJPanel panel = new AirlineViewJPanel(XJpanel, value);
-                     this.XJpanel.add(panel);
-                       CardLayout layout = (CardLayout) XJpanel.getLayout();
-                       layout.next(XJpanel);
+                         this.XJpanel.add(panel);
+                         CardLayout layout = (CardLayout) XJpanel.getLayout();
+                         layout.next(XJpanel);
                 }
             }
         }else
